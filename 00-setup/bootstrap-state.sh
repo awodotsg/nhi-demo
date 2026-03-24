@@ -25,7 +25,7 @@ echo "=================================================="
 echo ""
 
 # ── S3 Bucket ─────────────────────────────────────────────────────────────────
-echo "[1/4] Creating S3 bucket..."
+echo "[1/3] Creating S3 bucket..."
 
 # us-east-1 does not accept a LocationConstraint — every other region does
 if [ "${AWS_REGION}" = "us-east-1" ]; then
