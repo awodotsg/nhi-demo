@@ -14,6 +14,11 @@ terraform {
       source  = "hashicorp/aws"
       version = "~> 5.0"
     }
+
+    tls = {
+      source  = "hashicorp/tls"
+      version = "~> 4.0"
+    }
   }
 
   # ── Remote State Backend ───────────────────────────────────────────────────
@@ -29,7 +34,8 @@ terraform {
 }
 
 provider "aws" {
-  region = var.aws_region
+  region  = var.aws_region
+  profile = "nhi-demo-${var.environment}"
 
   # Applied to every resource created by this provider — no need to repeat tags
   default_tags {

@@ -60,8 +60,8 @@ variable "admin_cidr" {
 # ── DNS ────────────────────────────────────────────────────────────────────────
 
 variable "route53_zone_name" {
-  description = "Your Route53 hosted zone name (e.g. example.com)"
-  type        = string
+  description = "Your Route53 hosted zone name (e.g. example.com.)"
+  type        = string  
 }
 
 variable "conjur_subdomain" {
