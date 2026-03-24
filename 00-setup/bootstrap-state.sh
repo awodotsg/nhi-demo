@@ -11,9 +11,9 @@ AWS_REGION="${AWS_REGION:-ap-southeast-1}"
 ENVIRONMENT="${ENVIRONMENT:-staging}" # staging/demo
 PROJECT="nhi-demo"
 
-# S3 bucket names must be globally unique — we suffix with the account ID
+# S3 bucket names must be globally unique — add identifier prefix and environment suffix
 ACCOUNT_ID=$(aws sts get-caller-identity --query Account --output text)
-BUCKET_NAME="${PROJECT}-tfstate-${ACCOUNT_ID}"
+BUCKET_NAME="awodotsg-${PROJECT}-tfstate-${ENVIRONMENT}"
 DYNAMO_TABLE="${PROJECT}-tfstate-lock"
 
 echo "=================================================="
